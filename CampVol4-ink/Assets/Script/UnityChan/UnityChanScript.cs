@@ -16,7 +16,7 @@ public class UnityChanScript : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     [SerializeField] private TextMeshProUGUI gameOverText;
-    private float speed = 5.0f;
+    private float speed = 3.0f;
     private float gravity = 20.0f;
     private float gravityPower = -1000f;
     private float jumpPower = 1000f;
@@ -39,7 +39,6 @@ public class UnityChanScript : MonoBehaviour
     {
         Move();
         JumpCheck();
-        JumpSpeedCheck();
     }
 
     private void FixedUpdate()
@@ -54,6 +53,7 @@ public class UnityChanScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
+            speed = 5.0f;
             if (d == direction.left)
             {
                 d = direction.right;
@@ -62,6 +62,7 @@ public class UnityChanScript : MonoBehaviour
         } else if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger(Speed, 1);
+            speed = 3.0f;
             if (d == direction.left)
             {
                 d = direction.right;
@@ -75,6 +76,7 @@ public class UnityChanScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
+            speed = 5.0f;
             if (d == direction.right)
             {
                 d = direction.left;
@@ -83,6 +85,7 @@ public class UnityChanScript : MonoBehaviour
         } else if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger(Speed, 1);
+            speed = 3.0f;
             if (d == direction.right)
             {
                 d = direction.left;
@@ -116,12 +119,6 @@ public class UnityChanScript : MonoBehaviour
                 animator.SetBool(JumpSpeed, false);
             }
         }
-    }
-
-    void JumpSpeedCheck()
-    {
-        print($"velocity = {rb.velocity.y}");
-        
     }
 
     private void OnCollisionEnter(Collision collision)
