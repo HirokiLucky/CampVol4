@@ -16,13 +16,16 @@ public class UnityChanScript : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     [SerializeField] private TextMeshProUGUI gameOverText;
+    
     private float speed = 3.0f;
     private float gravity = 20.0f;
     private float gravityPower = -1000f;
     private float jumpPower = 1000f;
+    
     private direction d = direction.right;
     private bool isGround = true;
     private Vector3 prevPosition;
+    
     private static readonly int Speed = Animator.StringToHash("speed");
     private static readonly int Jump = Animator.StringToHash("jump");
     private static readonly int JumpSpeed = Animator.StringToHash("jumpSpeed");
@@ -45,7 +48,7 @@ public class UnityChanScript : MonoBehaviour
     {
         Gravity();
         float x = Input.GetAxis("Horizontal") * speed;
-        rb.velocity= new Vector3(x, rb.velocity.y, 0);
+        rb.velocity = new Vector3(x, rb.velocity.y, 0);
     }
 
     void Move()

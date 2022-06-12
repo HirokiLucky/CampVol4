@@ -227,6 +227,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3673123799110394001, guid: 234a458d2bc9de040834a24c42610268,
+        type: 3}
+      propertyPath: bounce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673123799110394001, guid: 234a458d2bc9de040834a24c42610268,
+        type: 3}
+      propertyPath: friction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673123799110394001, guid: 234a458d2bc9de040834a24c42610268,
+        type: 3}
+      propertyPath: gravity.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673123799110394001, guid: 234a458d2bc9de040834a24c42610268,
+        type: 3}
+      propertyPath: enableCollision
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3851483538773457101, guid: 234a458d2bc9de040834a24c42610268,
         type: 3}
       propertyPath: m_RootOrder
@@ -650,7 +670,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954636906}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: dc8f84ec0ac20d84e97645b8c7586db6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.23487782
@@ -667,11 +687,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 70
   m_Drag: 0
-  m_AngularDrag: 1500
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &954636912
 MonoBehaviour:
