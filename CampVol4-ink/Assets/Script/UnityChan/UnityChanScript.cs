@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 enum direction
 { 
@@ -13,6 +15,7 @@ public class UnityChanScript : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator animator;
+    [SerializeField]private TextMeshProUGUI gameOverText;
     private float speed = 5.0f;
     private float gravity = 20.0f;
     private float gravityPower = -1000f;
@@ -114,6 +117,11 @@ public class UnityChanScript : MonoBehaviour
         {
             isGround = true;
             animator.SetBool(Jump, false);
+        }
+        
+        if (collision.gameObject.CompareTag("GameOver"))
+        {
+            gameOverText.text = "Game Over";
         }
     }
 }
