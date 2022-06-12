@@ -15,7 +15,7 @@ public class UnityChanScript : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator animator;
-    [SerializeField]private TextMeshProUGUI gameOverText;
+    [SerializeField] private TextMeshProUGUI gameOverText;
     private float speed = 5.0f;
     private float gravity = 20.0f;
     private float gravityPower = -1000f;
