@@ -22,8 +22,10 @@ public class UnityChanScript : MonoBehaviour
     private float jumpPower = 1000f;
     private direction d = direction.right;
     private bool isGround = true;
+    private Vector3 prevPosition;
     private static readonly int Speed = Animator.StringToHash("speed");
     private static readonly int Jump = Animator.StringToHash("jump");
+    private static readonly int JumpSpeed = Animator.StringToHash("jumpSpeed");
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class UnityChanScript : MonoBehaviour
     {
         Move();
         JumpCheck();
+        JumpSpeedCheck();
     }
 
     private void FixedUpdate()
@@ -108,7 +111,17 @@ public class UnityChanScript : MonoBehaviour
     void Gravity() {
         if (!isGround) {
             rb.AddForce(new Vector3(0, gravityPower, 0));
+            if (rb.velocity.y < 0)
+            {
+                animator.SetBool(JumpSpeed, false);
+            }
         }
+    }
+
+    void JumpSpeedCheck()
+    {
+        print($"velocity = {rb.velocity.y}");
+        
     }
 
     private void OnCollisionEnter(Collision collision)
