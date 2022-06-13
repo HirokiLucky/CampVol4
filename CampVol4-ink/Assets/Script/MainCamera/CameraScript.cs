@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     [SerializeField]private GameObject player;
-    private Vector3 generalCameraPos = new Vector3(2, 2, -8);
+    private Vector3 generalCameraPos = new Vector3(2, 2, -15);
     
     void Update()
     {

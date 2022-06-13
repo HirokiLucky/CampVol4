@@ -23,7 +23,7 @@ public class UnityChanScript : MonoBehaviour
     private float jumpPower = 1000f;
     
     private direction d = direction.right;
-    private bool isGround = true;
+    [NonSerialized] public bool isGround = true;
     private Vector3 prevPosition;
     
     private static readonly int Speed = Animator.StringToHash("speed");
