@@ -18,7 +18,6 @@ public class UnityChanScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameOverText;
     
     private float speed = 3.0f;
-    private float gravity = 20.0f;
     private float gravityPower = -1000f;
     private float jumpPower = 1000f;
     
@@ -115,8 +114,8 @@ public class UnityChanScript : MonoBehaviour
     }
     
     void Gravity() {
+        rb.AddForce(new Vector3(0, gravityPower, 0));
         if (!isGround) {
-            rb.AddForce(new Vector3(0, gravityPower, 0));
             if (rb.velocity.y < 0)
             {
                 animator.SetBool(JumpSpeed, false);

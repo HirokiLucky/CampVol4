@@ -9,6 +9,6 @@ public class Bound : MonoBehaviour
     private UnityChanScript unityChanScript;
     private void OnCollisionEnter(Collision collision)
     {
-        //collision.rigidbody.AddForce(transform.up * 2000f, ForceMode.Impulse);
+        collision.rigidbody.AddForce(transform.up * 1500f, ForceMode.Impulse);
     }
 }
