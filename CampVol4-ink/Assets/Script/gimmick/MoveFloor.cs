@@ -18,7 +18,7 @@ public class MoveFloor : MonoBehaviour
     void FixedUpdate()
     {
         CheckPos();
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * 3);
     }
 
     void CheckPos()

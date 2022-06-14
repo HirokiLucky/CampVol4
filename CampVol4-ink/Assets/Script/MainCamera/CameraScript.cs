@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Palmmedia.ReportGenerator.Core;
@@ -7,10 +8,14 @@ public class CameraScript : MonoBehaviour
 {
     [SerializeField]private GameObject player;
     private Vector3 generalCameraPos = new Vector3(2, 2, -15);
+    private float speed = 1f;
+    private float scroll;
     
     void Update()
     {
         var playerPos = player.transform.position;
-        transform.position = playerPos + generalCameraPos;
+        scroll = Input.GetAxis("Mouse ScrollWheel");
+        transform.position += transform.forward * (scroll * speed);
+        //transform.position = playerPos + generalCameraPos + transform.forward * (scroll * speed);
     }
 }
