@@ -7,6 +7,7 @@ public class MoveFloor : MonoBehaviour
 {
     Vector3 targetPos;
     private Vector3 startPos;
+    [SerializeField]private GameObject cloud;
     
     void Start()
     {
@@ -24,6 +25,7 @@ public class MoveFloor : MonoBehaviour
     {
         if (transform.position == targetPos)
         {
+            Instantiate(cloud, startPos, Quaternion.identity);
             Destroy(gameObject);
         }
     }
