@@ -15,7 +15,7 @@ public class CameraScript : MonoBehaviour
     {
         var playerPos = player.transform.position;
         scroll = Input.GetAxis("Mouse ScrollWheel");
-        transform.position += transform.forward * (scroll * speed);
-        //transform.position = playerPos + generalCameraPos + transform.forward * (scroll * speed);
+        generalCameraPos.z += scroll * speed;
+        transform.position = playerPos + generalCameraPos;
     }
 }
