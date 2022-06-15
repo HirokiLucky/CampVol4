@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
-public class MoveFloor : MonoBehaviour
+public class MoveCloud : MonoBehaviour
 {
     Vector3 targetPos;
     private Vector3 startPos;
@@ -12,8 +10,8 @@ public class MoveFloor : MonoBehaviour
     
     void Start()
     {
-        targetPos = new Vector3(110, 15, 1);
-        startPos = new Vector3(80, 15, 1);
+        targetPos = new Vector3(111, 15, -0.5f);
+        startPos = new Vector3(81, 15, -0.5f);
     }
     
     void FixedUpdate()
@@ -26,12 +24,10 @@ public class MoveFloor : MonoBehaviour
     {
         if (transform.position == targetPos)
         {
-            transform.DetachChildren();
             Instantiate(cloud, startPos, Quaternion.identity);
             Destroy(gameObject);
         }
     }
-    
-    
-    
+
+
 }
