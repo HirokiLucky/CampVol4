@@ -135,5 +135,20 @@ public class UnityChanScript : MonoBehaviour
         {
             gameOverText.text = "Game Over";
         }
+        
+        if (collision.gameObject.CompareTag($"MoveFloor"))
+        {
+            isGround = true;
+            animator.SetBool(Jump, false);
+            transform.SetParent(collision.transform);
+        }
+    }
+    
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("MoveFloor"))
+        {
+            transform.SetParent(null);
+        }
     }
 }

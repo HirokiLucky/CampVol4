@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -25,8 +26,12 @@ public class MoveFloor : MonoBehaviour
     {
         if (transform.position == targetPos)
         {
+            transform.DetachChildren();
             Instantiate(cloud, startPos, Quaternion.identity);
             Destroy(gameObject);
         }
     }
+    
+    
+    
 }
