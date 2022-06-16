@@ -15,6 +15,7 @@ public class UnityChanScript : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator animator;
+    [SerializeField] private unitychanStatus status;
     [SerializeField] private TextMeshProUGUI gameOverText;
     
     private float speed = 3.0f;
@@ -35,6 +36,7 @@ public class UnityChanScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        gameOverText.text = status.hp.ToString();
     }
 
     //Update is called once per frame
@@ -102,6 +104,32 @@ public class UnityChanScript : MonoBehaviour
         {
             animator.SetInteger(Speed, 0);
         }
+
+        if (status.star >= 5)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                status.star -= 5;
+                var ex = GameObject.Find("FlameThrower");
+                var skill = ex.GetComponent<ParticleSystem>();
+                skill.Play();
+            }
+        }
+
+
+        if (status.star >= 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                status.star -= 1;
+                var ex = GameObject.Find("OrbitalBeamPurple");
+                var orbital = ex.GetComponent<ParticleSystem>();
+                orbital.Play();
+            }
+        }
+
+        
+
     }
 
     void JumpCheck()
@@ -162,6 +190,11 @@ public class UnityChanScript : MonoBehaviour
         {
             gravityBool = false;
             rb.useGravity = false;
+        }
+
+        if (other.gameObject.CompareTag("Star"))
+        {
+            status.star++;
         }
     }
 
