@@ -9,6 +9,7 @@ TagManager:
   - GameOver
   - MoveFloor
   - Goal
+  - teleport
   layers:
   - Default
   - TransparentFX
