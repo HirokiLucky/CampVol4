@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +12,11 @@ public class nagaiPlanetAtmos : MonoBehaviour
     {
         
     }
+
     
+
     private void OnTriggerStay(Collider col)
     {
-        col.transform.position = Vector3.MoveTowards(col.transform.position, targetPos, Time.deltaTime * 10);
+        col.transform.position = Vector3.MoveTowards(col.transform.position, targetPos, Time.deltaTime * 7);
     }
 }

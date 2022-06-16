@@ -10,6 +10,7 @@ TagManager:
   - MoveFloor
   - Goal
   - teleport
+  - Atmos
   layers:
   - Default
   - TransparentFX

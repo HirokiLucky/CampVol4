@@ -4662,6 +4662,7 @@ GameObject:
   - component: {fileID: 4620298574920385585}
   - component: {fileID: 4620298574920385584}
   - component: {fileID: 4620298574920385582}
+  - component: {fileID: 3820706798390239957}
   m_Layer: 0
   m_Name: Set Costume_01 SD Unity-Chan
   m_TagString: Player
@@ -4793,6 +4794,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 0}
+--- !u!114 &3820706798390239957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090091852510125521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cddf1d3237daa4e912373f6e725ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9162640939132601076
 GameObject:
   m_ObjectHideFlags: 0
