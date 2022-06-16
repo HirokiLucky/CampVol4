@@ -6,7 +6,7 @@ using UnityEngine;
 public class nagaiPlanet1 : MonoBehaviour
 {
     
-    void Update()
+    void FixedUpdate()
     {
         transform.Rotate(new Vector3(0, 0, 3) * Time.deltaTime);
     }

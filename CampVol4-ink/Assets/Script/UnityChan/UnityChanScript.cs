@@ -23,6 +23,7 @@ public class UnityChanScript : MonoBehaviour
     
     private direction d = direction.right;
     [NonSerialized] public bool isGround = true;
+    private bool gravityBool = true;
     private Vector3 prevPosition;
     
     private static readonly int Speed = Animator.StringToHash("speed");
@@ -45,7 +46,10 @@ public class UnityChanScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Gravity();
+        if (gravityBool)
+        {
+            Gravity();
+        }
         float x = Input.GetAxis("Horizontal") * speed;
         rb.velocity = new Vector3(x, rb.velocity.y, 0);
     }
@@ -149,6 +153,29 @@ public class UnityChanScript : MonoBehaviour
         if (other.gameObject.CompareTag("MoveFloor"))
         {
             transform.SetParent(null);
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Atmos"))
+        {
+            gravityBool = false;
+            rb.useGravity = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Atmos"))
+        {
+            gravityBool = true;
+            rb.useGravity = true;
         }
     }
 }
