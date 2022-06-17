@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class PushButton : MonoBehaviour
+public class PB2 : MonoBehaviour
 {
     [SerializeField] Button btn;
     // Start is called before the first frame update
@@ -14,5 +15,6 @@ public class PushButton : MonoBehaviour
     // Update is called once per frame
     void push(){
         Debug.Log("ボタンが押されました");
+        SceneManager.LoadScene("Stage2_koki");
     }
 }

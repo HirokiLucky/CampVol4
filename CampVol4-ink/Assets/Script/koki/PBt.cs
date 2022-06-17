@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Menutext : MonoBehaviour
+public class PBt : MonoBehaviour
 {
     [SerializeField] Button btn;
     // Start is called before the first frame update
@@ -14,8 +14,7 @@ public class Menutext : MonoBehaviour
 
     // Update is called once per frame
     void push(){
-        //処理について
         Debug.Log("ボタンが押されました");
-        SceneManager.LoadScene("habstage");
+        SceneManager.LoadScene("koki_tutrials");
     }
 }

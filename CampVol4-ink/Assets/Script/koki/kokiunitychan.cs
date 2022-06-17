@@ -11,10 +11,11 @@ enum directions
     left
 }
 
-public class unitychan : MonoBehaviour
+public class kokiunitychan : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator animator;
+    [SerializeField] private unitychanStatus status;
     [SerializeField] private TextMeshProUGUI gameOverText;
     
     private float speed = 15.0f;
@@ -23,6 +24,7 @@ public class unitychan : MonoBehaviour
     
     private directions d = directions.right;
     [NonSerialized] public bool isGround = true;
+    private bool gravityBool = true;
     private Vector3 prevPosition;
     
     private static readonly int Speed = Animator.StringToHash("speed");
@@ -34,6 +36,7 @@ public class unitychan : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        gameOverText.text = status.hp.ToString();
     }
 
     //Update is called once per frame
@@ -45,7 +48,10 @@ public class unitychan : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Gravity();
+        if (gravityBool)
+        {
+            Gravity();
+        }
         float x = Input.GetAxis("Horizontal") * speed;
         rb.velocity = new Vector3(x, rb.velocity.y, 0);
     }
@@ -64,7 +70,7 @@ public class unitychan : MonoBehaviour
         } else if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger(Speed, 1);
-            speed = 15.0f;
+            speed = 10.0f;
             if (d == directions.left)
             {
                 d = directions.right;
@@ -98,6 +104,32 @@ public class unitychan : MonoBehaviour
         {
             animator.SetInteger(Speed, 0);
         }
+
+        if (status.star >= 5)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                status.star -= 5;
+                var ex = GameObject.Find("FlameThrower");
+                var skill = ex.GetComponent<ParticleSystem>();
+                skill.Play();
+            }
+        }
+
+
+        if (status.star >= 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                status.star -= 1;
+                var ex = GameObject.Find("OrbitalBeamPurple");
+                var orbital = ex.GetComponent<ParticleSystem>();
+                orbital.Play();
+            }
+        }
+
+        
+
     }
 
     void JumpCheck()
@@ -149,6 +181,34 @@ public class unitychan : MonoBehaviour
         if (other.gameObject.CompareTag("MoveFloor"))
         {
             transform.SetParent(null);
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Atmos"))
+        {
+            gravityBool = false;
+            rb.useGravity = false;
+        }
+
+        if (other.gameObject.CompareTag("Star"))
+        {
+            status.star++;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Atmos"))
+        {
+            gravityBool = true;
+            rb.useGravity = true;
         }
     }
 }
