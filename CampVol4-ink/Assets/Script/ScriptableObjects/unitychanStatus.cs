@@ -8,7 +8,8 @@ public class unitychanStatus : ScriptableObject
 {
     public string name = "UnityChan";
     public int hp = 10;
-    public bool ult = false;
-    public bool skill = true;
+    public int life = 100;
+    public int ult = 10;
+    public int skill = 2;
     public int star = 0;
 }

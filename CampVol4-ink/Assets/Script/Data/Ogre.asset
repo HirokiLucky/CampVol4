@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6cddf1d3237daa4e912373f6e725ce2, type: 3}
-  m_Name: unitychan
+  m_Script: {fileID: 11500000, guid: 99f4c80d3066f364e83ef341cfee8d58, type: 3}
+  m_Name: Ogre
   m_EditorClassIdentifier: 
-  name: UnityChan
+  name: Ogre
   hp: 10
-  ult: 0
-  skill: 0
-  star: 0
