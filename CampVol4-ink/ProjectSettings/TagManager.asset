@@ -12,6 +12,11 @@ TagManager:
   - teleport
   - Atmos
   - Star
+  - ult
+  - skill
+  - Mob
+  - Attack
+  - Find
   layers:
   - Default
   - TransparentFX

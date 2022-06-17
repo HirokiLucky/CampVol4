@@ -111,25 +111,47 @@ public class UnityChanScript : MonoBehaviour
             {
                 status.star -= 5;
                 var ex = GameObject.Find("FlameThrower");
+                var col = ex.GetComponent<CapsuleCollider>();
+                col.enabled = true;
+                Invoke(nameof(DelayFlame), 2f);
                 var skill = ex.GetComponent<ParticleSystem>();
                 skill.Play();
             }
         }
-
-
         if (status.star >= 1)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 status.star -= 1;
                 var ex = GameObject.Find("OrbitalBeamPurple");
+                var col = ex.GetComponent<BoxCollider>();
+                Invoke(nameof(DelayOrbitalStart), 2f);
+                Invoke(nameof(DelayOrbitalFinish), 2.7f);
                 var orbital = ex.GetComponent<ParticleSystem>();
                 orbital.Play();
             }
         }
-
-        
-
+    }
+    
+    void DelayFlame()
+    {
+        var ex = GameObject.Find("FlameThrower");
+        var col = ex.GetComponent<CapsuleCollider>();
+        col.enabled = false;
+    }
+    
+    void DelayOrbitalStart()
+    {
+        var ex = GameObject.Find("OrbitalBeamPurple");
+        var col = ex.GetComponent<BoxCollider>();
+        col.enabled = true;
+    }
+    
+    void DelayOrbitalFinish()
+    {
+        var ex = GameObject.Find("OrbitalBeamPurple");
+        var col = ex.GetComponent<BoxCollider>();
+        col.enabled = false;
     }
 
     void JumpCheck()
