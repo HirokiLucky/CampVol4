@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gameoverarea : MonoBehaviour{
+public class GMAt : MonoBehaviour{
     [SerializeField]
     GameObject gameOverUI;
     public GameObject player;
@@ -22,7 +22,7 @@ public class Gameoverarea : MonoBehaviour{
         if(other.gameObject==player.gameObject){
             //damage death 
             //UI表示
-            Invoke("ShowGameOverUI", 2f);
+            Invoke("ShowGameOverUI", 0.1f);
         }else{
             return;
         }

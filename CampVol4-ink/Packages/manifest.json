@@ -12,7 +12,7 @@
     "com.unity.postprocessing": "2.3.0",
     "com.unity.progrids": "3.0.3-preview.4",
     "com.unity.purchasing": "4.1.1",
-    "com.unity.springbone": "https://github.com/unity3d-jp/UnityChanSpringBone.git",
+    "com.unity.springbone": "file:C:/Users/takah/Downloads/UnityChanSpringBone-release-1.1/UnityChanSpringBone-release-1.1",
     "com.unity.test-framework": "1.1.31",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.4",

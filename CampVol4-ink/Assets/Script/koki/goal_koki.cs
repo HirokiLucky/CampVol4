@@ -9,7 +9,7 @@ public class goal_koki : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         //goalsの処理
         if(other.gameObject.CompareTag("Player")){
-            Invoke("ShowGoalUI", 3f);
+            Invoke("ShowGoalUI", 0.1f);
             Gamesystem.isClear1=true;
         }
     }
