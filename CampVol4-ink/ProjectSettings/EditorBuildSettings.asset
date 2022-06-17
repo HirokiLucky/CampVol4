@@ -4,4 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/habstage.unity
+    guid: d100495064437b44f85862ae312b2a8e
+  - enabled: 1
+    path: Assets/Scenes/koki_tutrials.unity
+    guid: ab139182eb185f145a27357bdf66176a
+  m_configObjects: {}
