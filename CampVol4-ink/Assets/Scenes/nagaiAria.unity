@@ -6046,13 +6046,13 @@ PrefabInstance:
     - target: {fileID: 6226809102728699628, guid: dd7786401b140af49b009cf163264948,
         type: 3}
       propertyPath: message
-      value: 11111
+      value: Hello!
       objectReference: {fileID: 0}
     - target: {fileID: 6226809102728699628, guid: dd7786401b140af49b009cf163264948,
         type: 3}
       propertyPath: messagePref
       value: 
-      objectReference: {fileID: 8856563991689052533, guid: 9ed49de85011d9b4184c0124f0d57c20,
+      objectReference: {fileID: 53040008138805851, guid: fab804c71d3d5f14fb6efa4e02612f5d,
         type: 3}
     - target: {fileID: 6226809102728699629, guid: dd7786401b140af49b009cf163264948,
         type: 3}
