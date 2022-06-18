@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FindOrc : MonoBehaviour
+public class FindGolem : MonoBehaviour
 {
     private Animator anim;
-    private GameObject orc;
+    private GameObject golem;
     void Start()
     {
-        orc = GameObject.Find("Orc");
-        anim = orc.GetComponent<Animator>();
+        golem = GameObject.Find("Golem");
+        anim = golem.GetComponent<Animator>();
     }
     
     private void OnTriggerEnter(Collider other)

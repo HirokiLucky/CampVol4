@@ -7,4 +7,5 @@ public class GhostStatus : ScriptableObject
 {
     public string ghostName = "Ghost";
     public int hp = 30;
+    public float speed = 5f;
 }

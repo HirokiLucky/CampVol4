@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FindOrc : MonoBehaviour
+public class AttackGolem : MonoBehaviour
 {
+    private GameObject golem;
     private Animator anim;
-    private GameObject orc;
     void Start()
     {
-        orc = GameObject.Find("Orc");
-        anim = orc.GetComponent<Animator>();
+        golem = GameObject.Find("Golem");
+        anim = golem.GetComponent<Animator>();
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            anim.SetInteger("Range", 1);
+            anim.SetInteger("Range", 2);
         }
     }
     
@@ -24,7 +24,7 @@ public class FindOrc : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            anim.SetInteger("Range", 0);
+            anim.SetInteger("Range", 1);
         }
     }
 }
