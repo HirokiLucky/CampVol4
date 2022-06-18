@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class loadhab2 : MonoBehaviour{
+public class Loadhab2 : MonoBehaviour{
     
     void OnTriggerEnter(Collider other){
-        SceneManager.LoadScene("nagaiAria");
+        if(other.gameObject.CompareTag("Player")){
+            SceneManager.LoadScene("nagaiAria");
+        }
     }
 }

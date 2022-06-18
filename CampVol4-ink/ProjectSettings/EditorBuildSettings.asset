@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage2_koki.unity
     guid: 618367c8f4c44014f8ae752e88dd5826
+  - enabled: 1
+    path: Assets/Scenes/nagaiAria.unity
+    guid: c3a39825591519d49a305047a0fa6455
+  - enabled: 1
+    path: Assets/Scenes/nagaiArea2.unity
+    guid: 6ff90dc443522d441861b237f3351004
   m_configObjects: {}
