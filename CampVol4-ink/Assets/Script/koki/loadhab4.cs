@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Loadhab4 : MonoBehaviour{
+public class loadhab4 : MonoBehaviour{
     
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("Player")){

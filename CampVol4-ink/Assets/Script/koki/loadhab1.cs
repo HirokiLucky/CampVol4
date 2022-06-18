@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Loadhab1 : MonoBehaviour{
+public class loadhab1 : MonoBehaviour{
     
     void Start(){
     
