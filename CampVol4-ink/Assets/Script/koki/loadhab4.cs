@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class loadhab4 : MonoBehaviour{
+public class Loadhab4 : MonoBehaviour{
     
     void OnTriggerEnter(Collider other){
-        SceneManager.LoadScene("Stage2_koki");
+        if(other.gameObject.CompareTag("Player")){
+            SceneManager.LoadScene("Stage2_koki");
+        }
     }
 }
