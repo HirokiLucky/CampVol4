@@ -15,7 +15,7 @@ public class Orc_M1 : MonoBehaviour
     void Start()
     {
         status.hp = 50;
-        hpslider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
+        hpslider = HPUI.transform.Find("HPBar_orc").GetComponent<Slider>();
         hpslider.value = 1f;
     }
 

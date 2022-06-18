@@ -15,7 +15,7 @@ public class Dragon_M1 : MonoBehaviour
     void Start()
     {
         status.hp = 50;
-        hpslider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
+        hpslider = HPUI.transform.Find("HPBar_dra").GetComponent<Slider>();
         hpslider.value = 1f;
     }
 
