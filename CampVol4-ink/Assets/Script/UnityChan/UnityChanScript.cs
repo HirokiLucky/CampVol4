@@ -16,7 +16,7 @@ public class UnityChanScript : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     [SerializeField] private unitychanStatus status;
-    //[SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField]  Transform CenterOfBalance;
     
     private float speed = 3.0f;
     private float gravityPower = -1000f;
@@ -24,7 +24,7 @@ public class UnityChanScript : MonoBehaviour
     
     private direction d = direction.right;
     [NonSerialized] public bool isGround = true;
-    private bool gravityBool = true;
+    public bool gravityBool = true;
     private Vector3 prevPosition;
     
     private static readonly int Speed = Animator.StringToHash("speed");
@@ -52,6 +52,21 @@ public class UnityChanScript : MonoBehaviour
         {
             Gravity();
         }
+        else
+        {
+            RaycastHit hit;
+
+            // Transformの真下の地形の法線を調べる
+            if (Physics.Raycast(CenterOfBalance.position, -transform.up, out hit, float.PositiveInfinity))
+            {
+                // 傾きの差を求める
+                Quaternion q = Quaternion.FromToRotation(transform.up, hit.normal);
+
+                // 自分を回転させる
+                transform.rotation *= q;
+            }
+        }
+
         float x = Input.GetAxis("Horizontal") * speed;
         rb.velocity = new Vector3(x, rb.velocity.y, 0);
     }
