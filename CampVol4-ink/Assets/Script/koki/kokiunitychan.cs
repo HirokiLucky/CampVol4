@@ -16,9 +16,9 @@ public class kokiunitychan : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     [SerializeField] private unitychanStatus status;
-    [SerializeField] private TextMeshProUGUI gameOverText;
+    //[SerializeField] private TextMeshProUGUI gameOverText;
     
-    private float speed = 15.0f;
+    private float speed = 3.0f;
     private float gravityPower = -1000f;
     private float jumpPower = 1000f;
     
@@ -36,7 +36,7 @@ public class kokiunitychan : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        gameOverText.text = status.hp.ToString();
+        //gameOverText.text = status.hp.ToString();
     }
 
     //Update is called once per frame
@@ -61,7 +61,7 @@ public class kokiunitychan : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
-            speed = 20.0f;
+            speed = 5.0f;
             if (d == directions.left)
             {
                 d = directions.right;
@@ -70,7 +70,7 @@ public class kokiunitychan : MonoBehaviour
         } else if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger(Speed, 1);
-            speed = 10.0f;
+            speed = 3.0f;
             if (d == directions.left)
             {
                 d = directions.right;
@@ -84,7 +84,7 @@ public class kokiunitychan : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
-            speed = 20.0f;
+            speed = 5.0f;
             if (d == directions.right)
             {
                 d = directions.left;
@@ -93,7 +93,7 @@ public class kokiunitychan : MonoBehaviour
         } else if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger(Speed, 1);
-            speed = 15.0f;
+            speed = 3.0f;
             if (d == directions.right)
             {
                 d = directions.left;
@@ -111,25 +111,47 @@ public class kokiunitychan : MonoBehaviour
             {
                 status.star -= 5;
                 var ex = GameObject.Find("FlameThrower");
+                var col = ex.GetComponent<CapsuleCollider>();
+                col.enabled = true;
+                Invoke(nameof(DelayFlame), 2f);
                 var skill = ex.GetComponent<ParticleSystem>();
                 skill.Play();
             }
         }
-
-
         if (status.star >= 1)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 status.star -= 1;
                 var ex = GameObject.Find("OrbitalBeamPurple");
+                var col = ex.GetComponent<BoxCollider>();
+                Invoke(nameof(DelayOrbitalStart), 2f);
+                Invoke(nameof(DelayOrbitalFinish), 2.7f);
                 var orbital = ex.GetComponent<ParticleSystem>();
                 orbital.Play();
             }
         }
-
-        
-
+    }
+    
+    void DelayFlame()
+    {
+        var ex = GameObject.Find("FlameThrower");
+        var col = ex.GetComponent<CapsuleCollider>();
+        col.enabled = false;
+    }
+    
+    void DelayOrbitalStart()
+    {
+        var ex = GameObject.Find("OrbitalBeamPurple");
+        var col = ex.GetComponent<BoxCollider>();
+        col.enabled = true;
+    }
+    
+    void DelayOrbitalFinish()
+    {
+        var ex = GameObject.Find("OrbitalBeamPurple");
+        var col = ex.GetComponent<BoxCollider>();
+        col.enabled = false;
     }
 
     void JumpCheck()
@@ -165,7 +187,7 @@ public class kokiunitychan : MonoBehaviour
         
         if (collision.gameObject.CompareTag("GameOver"))
         {
-            gameOverText.text = "Game Over";
+            //gameOverText.text = "Game Over";
         }
         
         if (collision.gameObject.CompareTag($"MoveFloor"))
@@ -195,6 +217,11 @@ public class kokiunitychan : MonoBehaviour
         if (other.gameObject.CompareTag("Star"))
         {
             status.star++;
+        }
+
+        if (other.gameObject.CompareTag("Mob"))
+        {
+            status.hp -= 1;
         }
     }
 
