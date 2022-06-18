@@ -7,4 +7,5 @@ public class DragonStatus : ScriptableObject
 {
     public string name = "Dragon";
     public int hp = 20;
+    public float speed = 1f;
 }
