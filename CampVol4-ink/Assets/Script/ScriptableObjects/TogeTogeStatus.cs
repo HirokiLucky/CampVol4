@@ -7,5 +7,6 @@ public class TogeTogeStatus : ScriptableObject
 {
     public string togetogeName = "TogeToge";
     public int hp = 3;
+    public int maxhp = 3;
     public float speed = 1f;
 }

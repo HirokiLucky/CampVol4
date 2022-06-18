@@ -16,7 +16,7 @@ public class UnityChanScript : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     [SerializeField] private unitychanStatus status;
-    [SerializeField] private TextMeshProUGUI gameOverText;
+    //[SerializeField] private TextMeshProUGUI gameOverText;
     
     private float speed = 3.0f;
     private float gravityPower = -1000f;
@@ -36,7 +36,7 @@ public class UnityChanScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        gameOverText.text = status.hp.ToString();
+        //gameOverText.text = status.hp.ToString();
     }
 
     //Update is called once per frame
@@ -187,7 +187,7 @@ public class UnityChanScript : MonoBehaviour
         
         if (collision.gameObject.CompareTag("GameOver"))
         {
-            gameOverText.text = "Game Over";
+            //gameOverText.text = "Game Over";
         }
         
         if (collision.gameObject.CompareTag($"MoveFloor"))

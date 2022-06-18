@@ -7,5 +7,6 @@ public class SlimeStatus : ScriptableObject
 {
     public string slimeName = "Slime";
     public int hp = 50;
+    public int maxhp = 50;
     public float speed = 2f;
 }
