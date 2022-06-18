@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   slimeName: Slime
-  hp: 0
+  hp: 46
+  speed: 2

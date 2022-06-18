@@ -218,6 +218,11 @@ public class UnityChanScript : MonoBehaviour
         {
             status.star++;
         }
+
+        if (other.gameObject.CompareTag("Mob"))
+        {
+            status.hp -= 1;
+        }
     }
 
     private void OnTriggerStay(Collider other)
