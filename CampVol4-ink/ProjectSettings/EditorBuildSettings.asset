@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/nagaiArea2.unity
     guid: 6ff90dc443522d441861b237f3351004
   - enabled: 1
-    path: Assets/Scenes/Start_stand.unity
-    guid: ad5c3b02dd5ebb740be29389d4b374e8
+    path: Assets/Scenes/Stand_koki.unity
+    guid: a16379feddc0c854aa035d018b09f1da
   m_configObjects: {}
