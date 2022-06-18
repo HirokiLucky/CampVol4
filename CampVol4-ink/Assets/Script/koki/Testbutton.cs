@@ -4,16 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PBt : MonoBehaviour
+public class Testbutton : MonoBehaviour
 {
     [SerializeField] Button btn;
     // Start is called before the first frame update
     void Start(){
+        Debug.Log ("debug comment");
         btn.onClick.AddListener(push);
     }
 
     // Update is called once per frame
     void push(){
-        SceneManager.LoadScene("koki_tutrials");
+        Debug.Log ("push");
+        SceneManager.LoadScene("habstage");
+        Debug.Log ("push");
     }
 }
