@@ -14,7 +14,6 @@ public class PB2 : MonoBehaviour
 
     // Update is called once per frame
     void push(){
-        Debug.Log("ボタンが押されました");
         SceneManager.LoadScene("Stage2_koki");
     }
 }

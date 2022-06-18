@@ -27,7 +27,7 @@ public class Dropfloor : MonoBehaviour
 
     void Drop(){
         if (count >= 1.0f){
-            transform.Translate(0, 5.0f, 0);
+            Destroy(gameObject);
         }
     }
 
