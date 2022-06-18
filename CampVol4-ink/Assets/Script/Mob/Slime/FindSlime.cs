@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Find : MonoBehaviour
+public class FindSlime : MonoBehaviour
 {
     private Animator anim;
     private GameObject slime;

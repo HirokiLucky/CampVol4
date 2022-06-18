@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Body : MonoBehaviour
+public class AllSlime
+    : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody rb;

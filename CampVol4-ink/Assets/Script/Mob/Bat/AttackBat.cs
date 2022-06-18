@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class AttackBat : MonoBehaviour
 {
-    private GameObject slime;
+    private GameObject bat;
     private Animator anim;
     void Start()
     {
-        slime = GameObject.Find("Slime");
-        anim = slime.GetComponent<Animator>();
+        bat = GameObject.Find("Bat");
+        anim = bat.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)

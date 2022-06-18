@@ -5,17 +5,17 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Random = System.Random;
 
-public class All : MonoBehaviour
+public class BodyBat : MonoBehaviour
 {
     private Animator anim;
-    private GameObject slime;
+    private GameObject bat;
     
-    [SerializeField] private SlimeStatus status;
+    [SerializeField] private BatStatus status;
     [SerializeField] private unitychanStatus unityStatus;
     void Start()
     {
-        slime = GameObject.Find("Slime");
-        anim = slime.GetComponent<Animator>();
+        bat = GameObject.Find("Bat");
+        anim = bat.GetComponent<Animator>();
     }
 
     
@@ -27,15 +27,13 @@ public class All : MonoBehaviour
     
     void DelayDestroy()
     {
-        Destroy(slime);
+        Destroy(bat);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print(1111);
         if (other.CompareTag("skill"))
         {
-            print(3333);
             status.hp -= unityStatus.skill;
             anim.SetInteger("HP", status.hp);
             if (status.hp < 1)
@@ -47,7 +45,6 @@ public class All : MonoBehaviour
         }
         if (other.CompareTag("ult"))
         {
-            print(2222);
             status.hp -= unityStatus.ult;
             anim.SetInteger("HP", status.hp);
             if (status.hp < 1)

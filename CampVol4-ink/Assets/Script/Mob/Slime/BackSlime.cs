@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Back : MonoBehaviour
+public class BackSlime : MonoBehaviour
 {
     [SerializeField] private GameObject mob;
     private void OnTriggerEnter(Collider other)
