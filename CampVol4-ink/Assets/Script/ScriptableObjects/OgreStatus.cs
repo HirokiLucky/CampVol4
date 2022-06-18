@@ -7,4 +7,5 @@ public class OgreStatus : ScriptableObject
 {
     public string ogreName = "Ogre";
     public int hp = 10;
+    public float speed = 2f;
 }
