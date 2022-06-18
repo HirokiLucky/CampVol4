@@ -9,7 +9,7 @@ public class BodyGolem : MonoBehaviour
 {
     private Animator anim;
     private GameObject golem;
-    
+
     [SerializeField] private GhostStatus status;
     [SerializeField] private unitychanStatus unityStatus;
     void Start()
