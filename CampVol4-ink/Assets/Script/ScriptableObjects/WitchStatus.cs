@@ -7,4 +7,5 @@ public class WitchStatus : ScriptableObject
 {
     public string witchName = "Witch";
     public int hp = 10;
+    public float speed = 1f;
 }
