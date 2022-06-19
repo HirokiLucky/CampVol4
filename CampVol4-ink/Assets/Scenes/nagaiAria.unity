@@ -287,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 6226809102728699628, guid: dd7786401b140af49b009cf163264948,
         type: 3}
       propertyPath: message
-      value: 'Red Object is '
+      value: Red Object is Trampoline
       objectReference: {fileID: 0}
     - target: {fileID: 6226809102728699628, guid: dd7786401b140af49b009cf163264948,
         type: 3}
