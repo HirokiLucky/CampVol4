@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6cddf1d3237daa4e912373f6e725ce2, type: 3}
-  m_Name: unitychan
+  m_Script: {fileID: 11500000, guid: e961fa81704a8d048bd37ce59c56d977, type: 3}
+  m_Name: Ghost2
   m_EditorClassIdentifier: 
-  name: UnityChan
-  hp: 10
-  life: 100
-  ult: 10
-  skill: 2
-  star: 0
-  death: 26
+  ghostName: Ghost
+  hp: 30
+  maxhp: 30
+  speed: 5
