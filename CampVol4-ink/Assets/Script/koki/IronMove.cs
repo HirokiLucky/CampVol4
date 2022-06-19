@@ -22,7 +22,7 @@ public class IronMove : MonoBehaviour
     void FixedUpdate () {
         if(target.isVisible){
             Rigidbody rb = this.GetComponent<Rigidbody>();
-            Vector3 force = new Vector3 (-3.0f,0.0f,0.0f);
+            Vector3 force = new Vector3 (-6.0f,0.0f,0.0f);
             rb.AddForce (force);
         }
     }
