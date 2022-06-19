@@ -11,11 +11,11 @@ public class Bat_M2 : MonoBehaviour
     [SerializeField] private Slider hpslider;
     [SerializeField]
     private GameObject HPUI;
-    // Start is called before the first frame update
+    
+    
     void Start()
     {
         status.hp = 50;
-        hpslider = HPUI.transform.Find("HPBar_Bat2").GetComponent<Slider>();
         hpslider.value = 1f;
     }
 

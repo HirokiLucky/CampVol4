@@ -9,6 +9,7 @@ public class BodySlime : MonoBehaviour
 {
     private Animator anim;
     private GameObject slime;
+    private Slime_M1 m1;
     
     [SerializeField] private SlimeStatus status;
     [SerializeField] private unitychanStatus unityStatus;

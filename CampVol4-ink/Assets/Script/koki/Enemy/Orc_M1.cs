@@ -14,8 +14,7 @@ public class Orc_M1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        status.hp = 50;
-        hpslider = HPUI.transform.Find("HPBar_orc").GetComponent<Slider>();
+        status.hp = status.maxhp;
         hpslider.value = 1f;
     }
 
