@@ -63,7 +63,7 @@ public class kokiunitychan : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
-            speed = 15.0f;
+            speed = 18.0f;
             if (d == directions.left)
             {
                 d = directions.right;
@@ -86,7 +86,7 @@ public class kokiunitychan : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
-            speed = 15.0f;
+            speed = 18.0f;
             if (d == directions.right)
             {
                 d = directions.left;

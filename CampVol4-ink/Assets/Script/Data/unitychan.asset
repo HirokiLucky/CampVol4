@@ -17,5 +17,5 @@ MonoBehaviour:
   life: 100
   ult: 10
   skill: 2
-  star: 4
-  death: 0
+  star: 0
+  death: 16

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Hensuustand : MonoBehaviour
 {
-    //public Text Text;
-    // Start is called before the first frame update
+    public Text Text;
+    //Start is called before the first frame update
     void Start()
     {
         //GameObject player = GameObject.FindWithTag("Player")
