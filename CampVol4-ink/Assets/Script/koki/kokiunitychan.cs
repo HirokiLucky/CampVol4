@@ -18,7 +18,7 @@ public class kokiunitychan : MonoBehaviour
     [SerializeField] private unitychanStatus status;
     //[SerializeField] private TextMeshProUGUI gameOverText;
     
-    private float speed = 3.0f;
+    private float speed = 10.0f;
     private float gravityPower = -1000f;
     private float jumpPower = 1000f;
     
@@ -61,7 +61,7 @@ public class kokiunitychan : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
-            speed = 5.0f;
+            speed = 15.0f;
             if (d == directions.left)
             {
                 d = directions.right;
@@ -70,7 +70,7 @@ public class kokiunitychan : MonoBehaviour
         } else if (Input.GetKey(KeyCode.D))
         {
             animator.SetInteger(Speed, 1);
-            speed = 3.0f;
+            speed = 10.0f;
             if (d == directions.left)
             {
                 d = directions.right;
@@ -84,7 +84,7 @@ public class kokiunitychan : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
-            speed = 5.0f;
+            speed = 10.0f;
             if (d == directions.right)
             {
                 d = directions.left;
@@ -93,7 +93,7 @@ public class kokiunitychan : MonoBehaviour
         } else if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger(Speed, 1);
-            speed = 3.0f;
+            speed = 10.0f;
             if (d == directions.right)
             {
                 d = directions.left;

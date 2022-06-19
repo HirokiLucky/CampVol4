@@ -8682,9 +8682,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012a18f252785ea4f9688bbdaeff3608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: {fileID: 0}
-  hpslider: {fileID: 0}
-  HPUI: {fileID: 0}
+  status: {fileID: 11400000, guid: ff558fda7a9524e40a403474bc2d0fc4, type: 2}
+  hpslider: {fileID: 1441161234}
+  HPUI: {fileID: 2068985420}
 --- !u!114 &1441161234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9049,6 +9049,7 @@ GameObject:
   - component: {fileID: 1489382012}
   - component: {fileID: 1489382011}
   - component: {fileID: 1489382010}
+  - component: {fileID: 1489382014}
   m_Layer: 0
   m_Name: bound1
   m_TagString: Ground
@@ -9134,6 +9135,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489382014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489382009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75963cd562f6af944af7efe1ce1c2ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1492600864
 GameObject:
   m_ObjectHideFlags: 0
