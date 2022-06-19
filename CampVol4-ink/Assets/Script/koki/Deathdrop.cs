@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Deathdrop : MonoBehaviour{
     [SerializeField]
-    GameObject gameOverUI;
     public GameObject player;
     public GameObject ground;
  
@@ -18,21 +17,21 @@ public class Deathdrop : MonoBehaviour{
         }
     }
 
-    void OnCollisionEnter(Collision other){
-        if(other.gameObject==ground.gameObject){
-            Destroy(this.gameObject);
-        }else{
+    //void OnCollisionEnter(Collision other){
+      //  if(other.gameObject==ground.gameObject){
+        //    Destroy(this.gameObject);
+        //}else{
             //plauyerrを殺す
-            Invoke("ShowGameOverUI", 2f);
-        }
-    }
+           // Invoke("ShowGameOverUI", 2f);
+        //}
+    //}
  
     void deathGravity()
     {
         GetComponent<Rigidbody>().useGravity = true;
     }
 
-    private void ShowGameOverUI(){
-        gameOverUI.SetActive(true);
-    }
+    // private void ShowGameOverUI(){
+       // gameOverUI.SetActive(true);
+   // }
 }
