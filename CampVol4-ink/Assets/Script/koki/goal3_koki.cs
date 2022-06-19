@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class goal3_koki : MonoBehaviour{
@@ -11,6 +12,7 @@ public class goal3_koki : MonoBehaviour{
         if(other.gameObject.CompareTag("Player")){
             Invoke("ShowGoalUI", 0.1f);
             Gamesystem.isClear3=true;
+            SceneManager.LoadScene("habstage");
         }
     }
     private void ShowGoalUI()
