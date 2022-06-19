@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class branch_judge : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class branch_judge : MonoBehaviour
     }
     void OnTriggerEnter(Collider other){
         if(status.hp<=0){
-            return;
+            Destroy(gameObject);
         }else{
             //Player.hp=0;
         }

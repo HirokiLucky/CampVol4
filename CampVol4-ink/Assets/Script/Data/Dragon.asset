@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Dragon
   hp: 20
+  maxhp: 20
+  speed: 1

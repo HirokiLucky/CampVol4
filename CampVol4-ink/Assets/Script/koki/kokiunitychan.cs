@@ -16,15 +16,16 @@ public class kokiunitychan : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     [SerializeField] private unitychanStatus status;
-    //[SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private GameObject uiGo;
+    [SerializeField] private GameObject uiYd;
     
-    private float speed = 10.0f;
+    private float speed = 3.0f;
     private float gravityPower = -1000f;
     private float jumpPower = 1000f;
     
     private directions d = directions.right;
     [NonSerialized] public bool isGround = true;
-    private bool gravityBool = true;
+    public bool gravityBool = true;
     private Vector3 prevPosition;
     
     private static readonly int Speed = Animator.StringToHash("speed");
@@ -52,6 +53,7 @@ public class kokiunitychan : MonoBehaviour
         {
             Gravity();
         }
+
         float x = Input.GetAxis("Horizontal") * speed;
         rb.velocity = new Vector3(x, rb.velocity.y, 0);
     }
@@ -84,7 +86,7 @@ public class kokiunitychan : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetInteger(Speed, 2);
-            speed = 10.0f;
+            speed = 15.0f;
             if (d == directions.right)
             {
                 d = directions.left;
@@ -105,11 +107,11 @@ public class kokiunitychan : MonoBehaviour
             animator.SetInteger(Speed, 0);
         }
 
-        if (status.star >= 5)
+        if (status.star >= 1)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                status.star -= 5;
+                status.star -= 1;
                 var ex = GameObject.Find("FlameThrower");
                 var col = ex.GetComponent<CapsuleCollider>();
                 col.enabled = true;
@@ -118,11 +120,11 @@ public class kokiunitychan : MonoBehaviour
                 skill.Play();
             }
         }
-        if (status.star >= 1)
+        if (status.star >= 5)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                status.star -= 1;
+                status.star -= 5;
                 var ex = GameObject.Find("OrbitalBeamPurple");
                 var col = ex.GetComponent<BoxCollider>();
                 Invoke(nameof(DelayOrbitalStart), 2f);
@@ -132,7 +134,26 @@ public class kokiunitychan : MonoBehaviour
             }
         }
     }
-    
+
+    void hpChecker()
+    {
+        if (status.hp <= 0)
+        {
+            status.death++;
+            status.life--;
+            if (status.life <= 0)
+            {
+                uiGo.SetActive(true);
+            }
+            else
+            {
+                uiYd.SetActive(true);
+                status.hp = 10;
+            }
+        }
+    }
+
+
     void DelayFlame()
     {
         var ex = GameObject.Find("FlameThrower");
@@ -223,6 +244,13 @@ public class kokiunitychan : MonoBehaviour
         {
             status.hp -= 1;
         }
+        
+        if (other.gameObject.CompareTag("GameOver"))
+        {
+            status.hp = 0;
+        }
+        
+        hpChecker();
     }
 
     private void OnTriggerStay(Collider other)
