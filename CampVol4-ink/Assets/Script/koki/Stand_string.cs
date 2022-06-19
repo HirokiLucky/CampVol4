@@ -17,8 +17,6 @@ public class Stand_string : MonoBehaviour
     void Update()
     {
         count += Time.time;
-        Debug.Log ("Time.time");
-        Debug.Log ("debug comment");
         showsText();
     }
 
@@ -26,7 +24,7 @@ public class Stand_string : MonoBehaviour
         if (count >= 0.4f && count <= 2.5f){
             Text.SetActive(true);
         }
-        if(count > 2.5f){
+        if(count > 5.0f){
             Destroy(gameObject);
         }
     }

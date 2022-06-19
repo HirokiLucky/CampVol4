@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dragon_data1
   m_EditorClassIdentifier: 
   name: Dragon
-  hp: 20
+  hp: 0
   maxhp: 20
   speed: 1
