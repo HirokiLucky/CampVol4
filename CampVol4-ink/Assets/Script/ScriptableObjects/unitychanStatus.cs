@@ -12,4 +12,5 @@ public class unitychanStatus : ScriptableObject
     public int ult = 10;
     public int skill = 2;
     public int star = 0;
+    public int death = 0;
 }

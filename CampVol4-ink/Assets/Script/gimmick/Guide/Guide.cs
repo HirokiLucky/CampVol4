@@ -40,7 +40,10 @@ public class Guide : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        messageUI.transform.position = Vector3.MoveTowards(messageUI.transform.position, targetPos, Time.deltaTime * 1000);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            messageUI.transform.position = Vector3.MoveTowards(messageUI.transform.position, targetPos, Time.deltaTime * 1000);
+        }
     }
 
     public void OnTriggerExit(Collider c)

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
-public class PBt : MonoBehaviour
+//YouDie
+public class PBt2 : MonoBehaviour
 {
     [SerializeField] Button btn;
     // Start is called before the first frame update
@@ -14,6 +14,6 @@ public class PBt : MonoBehaviour
 
     // Update is called once per frame
     void push(){
-        SceneManager.LoadScene("koki_tutrials");
+        SceneManager.LoadScene("nagaiArea2");
     }
 }

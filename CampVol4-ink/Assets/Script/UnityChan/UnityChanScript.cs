@@ -16,7 +16,8 @@ public class UnityChanScript : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     [SerializeField] private unitychanStatus status;
-    [SerializeField]  Transform CenterOfBalance;
+    [SerializeField] private GameObject uiGo;
+    [SerializeField] private GameObject uiYd;
     
     private float speed = 3.0f;
     private float gravityPower = -1000f;
@@ -51,20 +52,6 @@ public class UnityChanScript : MonoBehaviour
         if (gravityBool)
         {
             Gravity();
-        }
-        else
-        {
-            RaycastHit hit;
-
-            // Transformの真下の地形の法線を調べる
-            if (Physics.Raycast(CenterOfBalance.position, -transform.up, out hit, float.PositiveInfinity))
-            {
-                // 傾きの差を求める
-                Quaternion q = Quaternion.FromToRotation(transform.up, hit.normal);
-
-                // 自分を回転させる
-                transform.rotation *= q;
-            }
         }
 
         float x = Input.GetAxis("Horizontal") * speed;
@@ -120,11 +107,11 @@ public class UnityChanScript : MonoBehaviour
             animator.SetInteger(Speed, 0);
         }
 
-        if (status.star >= 5)
+        if (status.star >= 1)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                status.star -= 5;
+                status.star -= 1;
                 var ex = GameObject.Find("FlameThrower");
                 var col = ex.GetComponent<CapsuleCollider>();
                 col.enabled = true;
@@ -133,11 +120,11 @@ public class UnityChanScript : MonoBehaviour
                 skill.Play();
             }
         }
-        if (status.star >= 1)
+        if (status.star >= 5)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                status.star -= 1;
+                status.star -= 5;
                 var ex = GameObject.Find("OrbitalBeamPurple");
                 var col = ex.GetComponent<BoxCollider>();
                 Invoke(nameof(DelayOrbitalStart), 2f);
@@ -147,7 +134,26 @@ public class UnityChanScript : MonoBehaviour
             }
         }
     }
-    
+
+    void hpChecker()
+    {
+        if (status.hp <= 0)
+        {
+            status.death++;
+            status.life--;
+            if (status.life <= 0)
+            {
+                uiGo.SetActive(true);
+            }
+            else
+            {
+                uiYd.SetActive(true);
+                status.hp = 10;
+            }
+        }
+    }
+
+
     void DelayFlame()
     {
         var ex = GameObject.Find("FlameThrower");
@@ -238,6 +244,13 @@ public class UnityChanScript : MonoBehaviour
         {
             status.hp -= 1;
         }
+        
+        if (other.gameObject.CompareTag("GameOver"))
+        {
+            status.hp = 0;
+        }
+        
+        hpChecker();
     }
 
     private void OnTriggerStay(Collider other)
