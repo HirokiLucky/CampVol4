@@ -16,13 +16,11 @@ public class branch_judge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    void OnTriggerEnter(Collider other){
         if(status.hp<=0){
             Destroy(gameObject);
-        }else{
-            //Player.hp=0;
         }
+    }
+    void OnTriggerEnter(Collider other){
+        
     }
 }
